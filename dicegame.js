@@ -20,60 +20,25 @@
      
     displayOutput("You hear his engine roar the red lights begin to turn. the tires on your " + raceCar + " begin to screech!!! THIS IS IT!!!");
 
-    displayOutput("LET'S GO GET THIS GUY you'll get 5 tries to roll against your rival and don't forget your ONE NOS shot! best of luck! " + user); 
+    displayOutput("LET'S GO GET THIS GUY you'll get 5 tries to roll against your rival and don't forget your NOS shot! best of luck! " + user); 
     
     playerTurn();
-          
 }
 
 //6 different dices
 //4-sided, 6-sided, 8, 10, 12, and 20
 
-function dice4Side() {
-   
-    let randomNumber = Math.floor(Math.random() * 4 + 1);
+
+    function rollADice(diceSideValue) {
+        let randomNumber = Math.floor(Math.random() * diceSideValue + 1);
         displayOutput ("You rolled a: " + randomNumber);
         return randomNumber;
     }
 
-    function dice6Side() {
-       
-        let randomNumber = Math.floor(Math.random() * 6 + 1);
-        displayOutput ("You rolled a: " + randomNumber);
-        return randomNumber;
-    }
-
-    function dice8Side() {
-       
-        let randomNumber = Math.floor(Math.random() * 8 + 1);
-        displayOutput ("You rolled a: " + randomNumber);
-        return randomNumber;
-    }
-
-    function dice10Side() {
-        
-        let randomNumber = Math.floor(Math.random() * 10 + 1);
-        displayOutput ("You rolled a: " + randomNumber);
-        return randomNumber;
-    }
-
-    function dice12Side() {
-        
-        let randomNumber = Math.floor(Math.random() * 12 + 1);
-        displayOutput ("You rolled a: " + randomNumber);
-        return randomNumber;
-    }
-
-    function dice20Side() {
-        
-        let randomNumber = Math.floor(Math.random() * 20 + 1);
-        displayOutput ("You rolled a: " + randomNumber);
-        return randomNumber;
-    }
 
     function NOSRoll(){
         
-        let randomNumber = ( dice4Side()+dice6Side()+dice8Side()+dice10Side()+dice12Side()+dice20Side());
+        let randomNumber = ( rollADice(4)+rollADice(6)+rollADice(8)+rollADice(10)+rollADice(12)+rollADice(12));
         displayOutput ("WOOOOH!!! CAN YOU FEEL THE BOOST!!!");
         return randomNumber;
 }
@@ -87,27 +52,27 @@ function rollOnedice (diceType){
     let randomNumber;
     
     if (diceType ==4) {
-        randomNumber = dice4Side();
+        randomNumber = rollADice(4);
     } 
     
     else if (diceType ==6) {
-        randomNumber = dice6Side();
+        randomNumber = rollADice(6);
     }
     
     else if (diceType ==8) {
-        randomNumber = dice8Side();
+        randomNumber = rollADice(8);
     }
     
     else if (diceType ==10){
-        randomNumber = dice10Side();
+        randomNumber = rollADice(10);
     }
     
     else if (diceType ==12){
-        randomNumber = dice10Side();
+        randomNumber = rollADice(12);
     }
     
     else if (diceType ==20){
-        randomNumber = dice20Side();
+        randomNumber = rollADice(20);
     }
     
     else if ( diceType =="NOS" || diceType=="nos"){
