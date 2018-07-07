@@ -1,3 +1,5 @@
+"use strict";
+
 ////Master function to roll all dice
 
  function runGame () {
@@ -5,7 +7,7 @@
     let carArray = [ "NA", "Civic", "Corolla", "Miata","Mustang","Charger","Lancer","STI","240sx","RX7","Sentra","Skyline","Beetle","Passat","Jetta","M3","A4","Bugati","Romero","Fiat","Diablo"];
     
     displayOutput ("Welcome to DICE RACER!!") 
-    user = getUserInput ("What is your Racer name:");
+    let user = getUserInput ("What is your Racer name:");
     displayOutput ("Welcome " + user + " your dice rolls will determine the distance your vehicle has traveled. To beat your rival your gonna need to have a Guts & 50 Pts. Their are 6 different types of dices to choose from  4-SIDED | 6-SIDED | 8-SIDED | 10-SIDED | 12-SIDED | 20 SIDED each one representing a different gear and ultimately some NOS (rolls all 6 dice types) use it wisely)");
      
     let carChoiceValue = getUserInput("What Dice would you like to roll first? this will determine your cartype. Please choose from 4 | 6 | 8 | 10 | 12 or 20 ");
@@ -81,7 +83,7 @@ function rollOnedice (diceType){
     
     else {
         alert ("please enter a valid entry. please try again");
-        rollDice = getUserInput("please select 4 | 6 | 8 | 10 | 12 or 20");
+        let rollDice = getUserInput("please select 4 | 6 | 8 | 10 | 12 or 20");
         randomNumber = rollOnedice (rollDice);
     }
     
@@ -96,7 +98,7 @@ function playerTurn (){
     
     let playerOneScore = 0;
     
-    for (i = 0; i < 5; i++){
+    for (let i = 0; i < 5; i++){
 
         let rollDice = rollOnedice(getUserInput("What dice did you want to roll? 4 | 6 | 8 | 10 | 12 | 20 or NOS"));
 
